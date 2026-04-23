@@ -16,6 +16,7 @@
           <option value="glazed">Glazed Donut</option>
           <option value="jelly">Jelly Donut</option>
           <option value="boston">Boston Cream</option>
+          <option value="twisted">Twisted Donut</option>
         </select>
       </label>
       <button type="submit">Order</button>
@@ -27,15 +28,18 @@
         glazed: "https://daylightdonutsstgeorge.com/wp-content/uploads/2023/06/Raised-Glazed.jpg",
         jelly: "https://static01.nyt.com/images/2014/12/14/magazine/14eat4/14eat4-superJumbo.jpg",
         boston: "https://i0.wp.com/www.onegreenplanet.org/wp-content/uploads/2020/03/screen-shot-2020-03-30-at-12-35-21-pm.png?fit=763%2C657&ssl=1",
+        twisted: "https://storage.googleapis.com/images-prs-prd-c7e7986.prs.prd.v8.commerce.mi9cloud.com/product-images/zoom/00247965000007_1"
       };
 
       $("#donut-form").on("submit", function (event) {
         event.preventDefault();
 
-        
-        
-        
-        
+      var $donutType = $(this).find("[name=type]"); 
+      var donutType = $donutType.val();
+      var $img = $("<img>");
+      $img.width(100);
+      $img.attr("src", donutImages[donutType]);
+      $img.appendTo("body");
         
       });
     </script>
